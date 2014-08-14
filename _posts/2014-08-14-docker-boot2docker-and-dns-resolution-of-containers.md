@@ -199,9 +199,7 @@ $ docker run -d -p 172.17.42.1:53:53/udp --name skydns crosbymichael/skydns -nam
 $ docker run -d -v /var/run/docker.sock:/docker.sock --name skydock crosbymichael/skydock -ttl 30 -environment dev -s /docker.sock -domain docker -name skydns
 {% endhighlight %}
 
-The SkyDock container has two interesting arguments: `--domain` is the name of the "fake" domain that all hosts will get. The `--environment` is a prefix to the domain name. We will see an example later.
-
-Ensure now that both containers where started and check the output:
+The SkyDock container has two interesting arguments: `--domain` is the name of the "fake" domain that all hosts will get. The `--environment` is a prefix to the domain name. We will see an example later. Ensure now that both containers where started and check the output:
 {% highlight bash %}
 $ docker ps
 CONTAINER ID        IMAGE                          COMMAND                CREATED             STATUS              PORTS                              NAMES
