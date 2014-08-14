@@ -1,13 +1,13 @@
 # Site wide configuration
 
-title:            //__Cloud_Idle__// Ramblings around Cloud, DevOps, SE, ...
+title:            //__devops_life__// Ramblings around Cloud, DevOps, SE, ...
 locale:           en_US
-url:              http://frosenberg.github.io
+#url:              http://www.devopslife.com/
 
 
 # Jekyll configuration
 
-permalink:   /:categories/:title/
+permalink:   /:year/:month/:day/:title.html
 markdown:    kramdown
 highlighter: pygments
 sass:

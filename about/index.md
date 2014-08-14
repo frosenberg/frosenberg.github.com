@@ -1,25 +1,15 @@
 ---
 layout: page
-title: About the Theme
-tags: [about, Jekyll, theme, responsive]
-modified: 2014-08-08T20:53:07.573882-04:00
-comments: true
+title: About me
+tags:
+modified: 2014-08-14T20:53:07.573882+02:00
 image:
   feature: texture-feature-02.jpg
   credit: Texture Lovers
   creditlink: http://texturelovers.com
 ---
 
-Minimal Mistakes is responsive Jekyll theme with large featured images and solid typography. As the name implies the styling is fairly minimal to make it easier for you to build on top of.
+I've joined IBM Research in January 2011, where I'm currently a Research Staff Member. I'm not doing much core research these days. In fact, I hack on a lot of interesting projects. I love the idea of DevOps and all the technical and organizational challenges that come with it. This is why I'm starting this blog.
 
-## Minimal Mistakes is all about:
-
-* Responsive templates. Looking good on mobile, tablet, and desktop.
-* Gracefully degrading in older browsers. Compatible with Internet Explorer 8+ and all modern browsers. 
-* Minimal embellishments -- content first.
-* Optional large feature images for posts and pages.
-* Simple and clear permalink structure.
-* [Custom 404 page](http://mmistakes.github.io/minimal-mistakes/404.html) to get you started.
-* Support for Disqus Comments
-
-<a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install Minimal Mistakes Theme</a>
+Before IBM, I was a Research Scientist with the CSIRO ICT Centre in Australia. I completed my PhD in June 2009 at the Vienna University of Technology in Austria where I worked at the [Distributed Systems Group](http://dsg.tuwien.ac.at).
+My current work focus is on DevOps and Cloud computing, in particular software configuration and continuous deployment incl. scaling, failure recovery, updates, etc.
