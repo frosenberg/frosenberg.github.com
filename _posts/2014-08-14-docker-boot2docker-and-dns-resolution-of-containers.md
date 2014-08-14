@@ -31,8 +31,8 @@ The goal is to have the following capabilities available after you complete this
 ### Prerequisites
 You need to have the following software installed.
 
-  * Mac OS X (this guide is not required for Linux because it can run docker natively)
-  * [boot2docker](http://boot2docker.io/) v1.1.1 (Note: I run the boot2docker ISO from [here](https://medium.com/boot2docker-lightweight-linux-for-docker/boot2docker-together-with-virtualbox-guest-additions-da1e3ab2465c) because I allows me to mounte /Users in the containers which is great for testing code that I'm working on)
+  * Mac OS X (this guide is not required for Linux because it can run docker nativly)
+  * [boot2docker](http://boot2docker.io/) v1.1.1 (Note: I run the boot2docker ISO from [here](https://medium.com/boot2docker-lightweight-linux-for-docker/boot2docker-together-with-virtualbox-guest-additions-da1e3ab2465c) because I allows me to mount /Users in the containers which is great for testing code that I'm working on)
   * [docker](http://www.docker.com) v1.1.1
   * git
 
@@ -165,7 +165,7 @@ other side. Now we can move on to getting DNS to work.
 
 ### 2. DNS for Docker
 Now that we are able to ping docker containers seamlessly from our Mac, it would be great
-to have DNS names automatically registred whenever a docker container comes up. 
+to have DNS names automatically registered whenever a docker container comes up. 
 There are two related projects out there called SkyDock and SkyDNS that fill this gap. 
 Setting them up is fairly easy. I won't go into the details of the project and the internals
 because [Michael Crosby](http://crosbymichael.com/), the founder of the project does a much better job.
@@ -250,14 +250,14 @@ nameserver 172.17.42.1
 nameserver 10.0.0.138
 {% endhighlight %}
 
-That's it, you can now enjoy full DNS-enabled docker containers.
+That's it, you can now enjoy full DNS-enabled docker containers. If you get tired of manually adding/removing the DNS server the `/etc/resolv.conf` after you stop the SkyDock container, you can create "Network Locations" in OS X. Go to System Menu (top left Apple symbol) -> Location and configure two profiles, one with SkyDNS server one without. Then you can easily switch.
 
 ### A simple script that ties all this together
 
 TBD provide github repo
 
 
-### Using VPN with all that stuff?
+### Connecting to VPN will break things
 
 If you have to use Cisco VPN to connect to your corporate network, you will soon realize that once you do that, pinging the docker containers will no longer work nor will DNS. I don't know why but it seems that VPN is doing some magic with firewalls.
 
