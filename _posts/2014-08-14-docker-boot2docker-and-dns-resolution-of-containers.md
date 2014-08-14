@@ -2,9 +2,9 @@
 layout: post
 title: "Docker, boot2docker and DNS resolution of containers"
 modified:
-categories: 
+categories: tech
 excerpt:
-tags: [docker, boot2docker]
+tags: [docker, boot2docker, cloud]
 image:
   feature:
 date: 2014-08-14T20:10:44+02:00
