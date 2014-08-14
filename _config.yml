@@ -29,13 +29,13 @@ owner:
   name: Florian Rosenberg
   avatar: bio-photo.jpg
   bio: "Software engineer, Researcher, DevOps enthusiat at IBM"
-  email: f.rosenberg@gmail.com
+  email: #f.rosenberg@gmail.com
   disqus-shortname: frosenberg
   twitter: ponifaax
   facebook: frosenberg
   google:
     plus:
-    analytics: UA-585527-4
+    analytics: UA-53838963-1
     verify: 
     ad-client: 
     ad-slot: 
