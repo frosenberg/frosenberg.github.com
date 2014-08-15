@@ -13,7 +13,7 @@ comments: true
 
 ###... or how to setup a full development environment with docker (on Mac OS X)
 
-This tutorial should help to setup a development environment on Mac OS X that relies heavily on docker and boot2docker. Based on my experience, docker is an excellent tool to create and run applications very effectively during dev, test and production. However, not having great development environment where docker can be used effectively slow you down and requires a lot of hand-tuning each an every time during the development process.
+This tutorial should help to setup a development environment on Mac OS X that relies heavily on docker and boot2docker. Based on my experience, docker is an excellent tool to create and run applications very effectively during dev, test and production. However, not having great development environment where docker can be used effectively slows you down and requires a lot of hand-tuning each an every time during the development process.
 
 Part of this tutorial is based on information from other blogs, such as [iSpyker](http://ispyker.blogspot.co.at/2014/04/accessing-docker-container-private.html) and [SkyDock](https://github.com/crosbymichael/skydock). Thanks for all the great
 work guys!
@@ -27,6 +27,8 @@ The goal is to have the following capabilities available after you complete this
   3. Ensure that this will also work if you have to use a corporate VPN client (like Cisco AnyConnect).
   4. Being able to quickly set this up and tear it down with a simple script.
 
+---------------------------------------
+
 
 ### Prerequisites
 You need to have the following software installed.
@@ -35,6 +37,8 @@ You need to have the following software installed.
   * [boot2docker](http://boot2docker.io/) v1.1.1 (Note: I run the boot2docker ISO from [here](https://medium.com/boot2docker-lightweight-linux-for-docker/boot2docker-together-with-virtualbox-guest-additions-da1e3ab2465c) because I allows me to mount /Users in the containers which is great for testing code that I'm working on)
   * [docker](http://www.docker.com) v1.1.1
   * git
+
+---------------------------------------
 
 ### What is the current problem?
 
@@ -67,8 +71,9 @@ telnet: Unable to connect to remote host
 
 It will timeout because the IP cannot be resolved. So let's fix that issues ... 
 
+---------------------------------------
 
-### 1. Setting up boot2docker
+### Setting up boot2docker
 If you have boot2docker already running, your VirtualBox (the hypervisor that is used by boot2docker) VM instance boot2docker-vm has been created already.
 
 #### Initialize the boot2docker-vm
@@ -161,21 +166,20 @@ Escape character is '^]'.
 Voila, we are connected. Type something in the telnet session and you'll see it on the 
 other side. Now we can move on to getting DNS to work.
 
+---------------------------------------
 
-
-### 2. DNS for Docker
+### Setup DNS for Docker
 Now that we are able to ping docker containers seamlessly from our Mac, it would be great
 to have DNS names automatically registered whenever a docker container comes up. 
-There are two related projects out there called SkyDock and SkyDNS that fill this gap. 
+There are two related projects out there called [SkyDock](https://github.com/crosbymichael/skydock) and [SkyDNS](https://github.com/crosbymichael/skydns) that fill this gap. 
 Setting them up is fairly easy. I won't go into the details of the project and the internals
 because [Michael Crosby](http://crosbymichael.com/), the founder of the project does a much better job.
 
-In a nutshell, you need to start two services, SkyDock and SkyDNS, which are both provided
+In a nutshell, you need to start two services, [SkyDock](https://github.com/crosbymichael/skydock)  and [SkyDNS](https://github.com/crosbymichael/skydns), which are both provided
 as pre-built containers. SkyDNS is a classical DNS server and SkyDock is listening at the docker 
 host for container being started and stopped, keeps track of them and creates the DNS entries in SkyDock. 
 
-To get started, we first need to "tune" the docker agent commands in the `boot2docker-vm` a bit. So first we
-need to kill the existing docker daemon running inside the `boot2docker-vm`.
+To get started, we need to "tune" the docker agent commands in the `boot2docker-vm` a bit. Let's kill the existing docker daemon running inside the `boot2docker-vm`.
 
 #### Changing the arguments of the docker daemon
 
@@ -209,18 +213,23 @@ cff583466d45        crosbymichael/skydns:latest    skydns -http 0.0.0.0   10 min
 
 #### Testing the DNS server
 
-We should not be able to get results from the DNS server. Let's start a docker container as follows: 
+We should now be able to get results from the DNS server. Let's start a docker container as follows: 
 {% highlight bash %}
 $ docker run -i -t --name u1 ubuntu bash
 {% endhighlight %}
 
-Let's query the result with dig:
+With SkyDock, the general rule for a DNS name is as follows: 
+{% highlight bash %}
+    <CONTAINER_NAME>.<IMAGE_NAME>.<ENVIRONMENT>.<DOMAIN>
+{% endhighlight %}
+
+So in this case the DNS name is  `u1.ubuntu.dev.docker`. Let's query the result with dig:
 {% highlight bash %}
 $ dig @172.17.42.1 +short u1.ubuntu.dev.docker
 172.17.0.8
 {% endhighlight %}
 
-The DNS name is composed as follows: <CONTAINER_NAME>.<IMAGE_NAME>.<ENVIRONMENT>.<DOMAIN>, so in this case the DNS name is  `u1.ubuntu.dev.docker`. If we start another container `docker run -i -t --name u2 ubuntu bash` and the use dig to query, we can get a lot of all `ubuntu` containers as follows:
+If we start another container `docker run -i -t --name u2 ubuntu bash` and the use dig to query, we can get a list of all `ubuntu` containers as follows:
 {% highlight bash %}
 $ dig @172.17.42.1 +short ubuntu.dev.docker
 172.17.0.8
@@ -250,18 +259,14 @@ nameserver 10.0.0.138
 
 That's it, you can now enjoy full DNS-enabled docker containers. If you get tired of manually adding/removing the DNS server the `/etc/resolv.conf` after you stop the SkyDock container, you can create "Network Locations" in OS X. Go to System Menu (top left Apple symbol) -> Location and configure two profiles, one with SkyDNS server one without. Then you can easily switch.
 
-### A simple script that ties all this together
-
-TBD provide github repo
-
+---------------------------------------
 
 ### Connecting to VPN will break things
 
 If you have to use Cisco VPN to connect to your corporate network, you will soon realize that once you do that, pinging the docker containers will no longer work nor will DNS. I don't know why but it seems that VPN is doing some magic with firewalls.
 
 Try connecting to VPN and test yourself. If the previous `dig` query still works you are fine 
-and you can skip this step. If you are getting a message like `;; connection timed out; no servers could be reached` 
-you are in trouble.
+and you can skip this step. If you are getting a message like `;; connection timed out; no servers could be reached` you are in trouble.
 
 The fix that works for me is to find a firewall rule that blocks all traffic (from any to any):
 
@@ -279,7 +284,11 @@ $ sudo ipfw delete 00411
 And then test if you `dig` query works again. Mine does :). Keep in mind that you have to redo this step *every* time 
 you reconnect VPN. The above git repository also has a script that automates that process as well.
 
+---------------------------------------
 
+### A simple script that ties all this together
+
+TBD provide github repo
 
 
 
