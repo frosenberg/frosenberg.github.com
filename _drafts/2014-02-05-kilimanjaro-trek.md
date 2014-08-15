@@ -1,24 +1,12 @@
 ---
 layout: post
-status: publish
-published: true
+published: false
 title: Kilimanjaro Trek
-author:
-  display_name: Florian
-  login: florian
-  email: f.rosenberg@gmail.com
-  url: http://www.florianrosenberg.com
-author_login: florian
-author_email: f.rosenberg@gmail.com
-author_url: http://www.florianrosenberg.com
-wordpress_id: 116
-wordpress_url: http://www.howaboutwetravel.com/?p=116
-date: '2014-02-05 10:10:18 +0100'
-date_gmt: '2014-02-05 15:10:18 +0100'
+date: 2014-02-05T10:10:18+0100
 categories:
 - Travel
-tags: []
-comments:
+tags: [tanzania, kilimanjaro, climbing]
+comments: true
 - id: 20
   author: Werner D&ouml;ller
   author_email: werner.doeller@hotmail.com
@@ -37,7 +25,7 @@ comments:
   date_gmt: '2014-04-15 06:17:10 +0200'
   content: Yes, we would have risked our lives, not worth it, but overall a wonderful
     experience.
-
+---
 
 <p><span style="line-height: 1.5em;">In February 2014, Florian and I went to Tanzania and did the Kilimanjaro trek. We chose the harder <&#47;span><b style="line-height: 1.5em;"><a href="http:&#47;&#47;www.kiboslopessafaris.com&#47;F_End&#47;adventure_it.asp?itId=18">Mawenzi Kibo<&#47;a><&#47;b><span style="line-height: 1.5em;">&nbsp;route, which we found to be very interesting. The route had many different terrains and climates. Our experiences are listed by day:<&#47;span></p>
 <p><b>Day 0<&#47;b></p>

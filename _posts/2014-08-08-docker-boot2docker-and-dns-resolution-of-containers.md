@@ -3,7 +3,7 @@ layout: post
 title: Docker, boot2docker and DNS resolution of containers
 modified:
 categories: tech
-excerpt:
+excerpt: This tutorial should help to setup a development environment on Mac OS X that relies heavily on docker and boot2docker. Based on my experience, docker is an excellent tool to create and run applications very effectively during dev, test and production. However, not having great development environment where docker can be used effectively slows you down and requires a lot of hand-tuning each an every time during the development process.
 tags: [docker, boot2docker, cloud]
 image:
   feature:
@@ -35,7 +35,7 @@ The goal is to have the following capabilities available after you complete this
   1. Run docker containers from your dev machine and have seamless access to all container using their IPs.  
   2. Enable DNS capabilities for all containers and being able to resolve them from your dev machine.
   3. Ensure that this will also work if you have to use a corporate VPN client (like Cisco AnyConnect).
-  4. Being able to quickly set this up and tear it down with a simple script.
+  4. Being able to quickly set this up and tear it down with a [simple script](https://github.com/frosenberg/docker-dns-scripts). Even though I provide a script (at the end), I highly suggest to go through this manually to understand the details.
 
 ---------------------------------------
 
@@ -46,7 +46,7 @@ You need to have the following software installed.
   * Mac OS X (this guide is not required for Linux because it can run docker nativly)
   * [boot2docker](http://boot2docker.io/) v1.1.1 (Note: I run the boot2docker ISO from [here](https://medium.com/boot2docker-lightweight-linux-for-docker/boot2docker-together-with-virtualbox-guest-additions-da1e3ab2465c) because I allows me to mount /Users in the containers which is great for testing code that I'm working on)
   * [docker](http://www.docker.com) v1.1.1
-  * git
+  * git for checking about the git repo with the scripts
 
 ---------------------------------------
 
@@ -299,8 +299,9 @@ And now test if your `dig` query works again. Mine does :). Keep in mind that yo
 
 ### A simple script that ties all this together
 
-TBD provide github repo
+I provided two scripts in [my git repo](https://github.com/frosenberg/docker-dns-scripts). There are some instructions in the readme. In a nutshell, the `enable-docker-dns.sh` implements the whole procedure described in this blog. When using those scripts, be aware that they are tested only in my environment and work for me. If you have problem please file and issue in github as there are many corner cases that I may not handle.
 
+The second script is the `vpn-fix.sh` script that I run every time I reconnect to my corporate VPN. It cleans out some conflicting rules. 
 
 
 

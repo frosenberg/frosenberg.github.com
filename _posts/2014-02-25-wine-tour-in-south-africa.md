@@ -7,7 +7,7 @@ author: sasha-kitaeva
 categories:
 - Travel
 tags: [south africa, wine]
-comments: []
+comments: true
 ---
 We went to Franschock and Stellenbosch to sample some wine farms. It was absolutely gorgeous in Franschock. We stayed in a little guesthouse run by a lovely lady. Her son John was kind enough to show us around town and take us to his favorite wine farms. It was so much fun!
 We went to the following places:
