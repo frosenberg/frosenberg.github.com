@@ -14,7 +14,7 @@ modified: 2014-08-14T20:53:07.573882+02:00
 ## Journal Papers
 
 1. O. Moser, F. Rosenberg, S. Dustdar (2012). [__Domain-Specific Service Selection for Composite Services__](tse2012.pdf). IEEE Transactions on Software Engineering, 38(4), p. 828-843, IEEE Computer Society
-2. B. Wetzstein, P. Leitner, F. Rosenberg, S. Dustdar, F. Leymann (February 2011). [__Identifying Influential Factors of Business Process Performance Using Dependency Analysis__](eis2010-branimon.pdf). Enterprise Information Systems, 5(1), p. 79-98, Taylor & Francis
+2. B. Wetzstein, P. Leitner, F. Rosenberg, S. Dustdar, F. Leymann (February 2011). [__Identifying Influential Factors of Business Process Performance Using Dependency Analysis__](eis10-branimon.pdf). Enterprise Information Systems, 5(1), p. 79-98, Taylor & Francis
 3. A. Michlmayr, F. Rosenberg, P. Leitner, S. Dustdar (July-September 2010). [__End-to-End Support for QoS-Aware Service Selection, Binding and Mediation in VRESCo__](tsc2010.pdf). IEEE Transactions on Services Computing, 3(3), p. 193-205, IEEE Computer Society
 1. S. Akram, A. Bouguettaya, X. Liu, A. Haller, F. Rosenberg (July 2010). [__A Change Management Framework for Service Oriented Enterprises__](ijngc10.pdf). International Journal of Next-Generation Computing, 1(1), p. 108-135, Perpetual Innovation Media
 1. A. Michlmayr, F. Rosenberg, P. Leitner, S. Dustdar (April 2010). [__Selective Service Provenance in the VRESCo Runtime__](jwsr2010.pdf). International Journal on Web Services Research, 7(2), p. 65-86, Idea Publishing Group

@@ -13,6 +13,16 @@ comments: true
 
 ###... or how to setup a full development environment with docker (on Mac OS X)
 
+<section id="table-of-contents" class="toc">
+  <header>
+    <h3>Overview</h3>
+  </header>
+<div id="drawer" markdown="1">
+*  Auto generated table of contents
+{:toc}
+</div>
+</section><!-- /#table-of-contents -->
+
 This tutorial should help to setup a development environment on Mac OS X that relies heavily on docker and boot2docker. Based on my experience, docker is an excellent tool to create and run applications very effectively during dev, test and production. However, not having great development environment where docker can be used effectively slows you down and requires a lot of hand-tuning each an every time during the development process.
 
 Part of this tutorial is based on information from other blogs, such as [iSpyker](http://ispyker.blogspot.co.at/2014/04/accessing-docker-container-private.html) and [SkyDock](https://github.com/crosbymichael/skydock). Thanks for all the great
@@ -70,6 +80,8 @@ telnet: Unable to connect to remote host
 {% endhighlight %}
 
 It will timeout because the IP cannot be resolved. So let's fix that issues ... 
+
+Before we jump to the solution you may already asked yourself the question "why is he not using port forwarding rules from VirtualBox?". They simply arent' enough if you using lots of containers and a highly dynamic system (e.g., based on [microservices](http://martinfowler.com/articles/microservices.html)). For one or two containers, such as a mongo and simple redis service that you app is requiring, port forwarding is totally fine. 
 
 ---------------------------------------
 
@@ -281,8 +293,7 @@ Now try to delete this rule:
 $ sudo ipfw delete 00411
 {% endhighlight %}
 
-And then test if you `dig` query works again. Mine does :). Keep in mind that you have to redo this step *every* time 
-you reconnect VPN. The above git repository also has a script that automates that process as well.
+And now test if your `dig` query works again. Mine does :). Keep in mind that you have to redo this step *every* time you reconnect your VPN. The git repository below also has a script that automates that process as well.
 
 ---------------------------------------
 
