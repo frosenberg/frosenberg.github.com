@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Docker, boot2docker and DNS resolution of containers"
+title: Docker, boot2docker and DNS resolution of containers
 modified:
 categories: tech
 excerpt:

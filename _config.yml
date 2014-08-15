@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title:            //__devops_life__// Ramblings around Cloud, DevOps, SE, ...
+title:            //__devops_life__// Ramblings around Cloud, DevOps, ... and travelling 
 locale:           en_US
 #url:              http://www.devopslife.com
 
@@ -23,12 +23,20 @@ kramdown:
   toc_levels: 1..6
   use_coderay: false
 
+# Picassa plugin
+picasa_album:
+    thumbnail_size: 1
+    gallery_tag: div
+    gallery_class: gallery
+    title_show: false
+    #title_tag: h3
+    a_class: fancybox
 
 # Site owner
 owner:
   name: Florian Rosenberg
   avatar: bio-photo.jpg
-  bio: "Software engineer, Researcher, DevOps enthusiat at IBM"
+  bio: "Traveler, Software engineer, Researcher, DevOps enthusiat at IBM"
   email: #f.rosenberg@gmail.com
   disqus-shortname: frosenberg
   twitter: ponifaax
