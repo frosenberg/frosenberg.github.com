@@ -9,7 +9,7 @@ modified: 2014-08-14T20:53:07.573882+02:00
 #  creditlink: http://texturelovers.com
 ---
 
-[DBLP](http://www.informatik.uni-trier.de/~ley/pers/hd/r/Rosenberg:Florian.html) and [Google Scholar](http://scholar.google.at/citations?user=KK2le2UAAAAJ&hl=en) maintain high quality publications list. Below is the list as I maintain them - let's see for how long.
+[DBLP](http://www.informatik.uni-trier.de/~ley/pers/hd/r/Rosenberg:Florian.html) and [Google Scholar](http://scholar.google.at/citations?user=KK2le2UAAAAJ&hl=en) maintain high quality publications list. Below is the list as I maintain it - let's see for how long.
 
 ## Journal Papers
 
@@ -43,7 +43,7 @@ modified: 2014-08-14T20:53:07.573882+02:00
 1. A. Michlmayr, F. Rosenberg, P. Leitner, S. Dustdar (2009). [__Comprehensive QoS Monitoring of Web Services and Event-Based SLA Violation Detection__](mw4soc2009.pdf). In: Proceedings of the 4th International Workshop on Middleware for Service Oriented Computing (MW4SOC'09), co-located with the ACM/IFIP/USENIX 10th International Middleware Conference (Middleware'09), 30. November - 4. December 2009, Urbana Champaign, Illinois, USA
 1. F. Rosenberg, R. Khalaf, M. Duftler, F. Curbera, P. Austel (2009). [__End-to-End Security for Enterprise Mashups__](icsoc2009.pdf). In: Proceedings of the 7th International Joint Conference on Service Oriented Computing (ICSOC'09), 23. - 27. November 2009, Stockholm, Sweden
 1. F. Rosenberg, P. Celikovic, A. Michlmayr, P. Leitner, S. Dustdar (2009). [__An End-to-End Approach for QoS-Aware Service Composition__](edoc2009-caas.pdf). In: Proceedings of the 13th IEEE International Enterprise Distributed Object Computing Conference (EDOC'09), 31. August - 4. September 2009, Auckland, New Zealand
-1. B. Wetzstein, P. Leitner, F. Rosenberg, I. Brandic, F. Leymann, S. Dustdar (2009). [__Monitoring and Analyzing Inﬂuential Factors of Business Process Performance__](edoc2009-branimon.pdf. In: Proceedings of the 13th IEEE International Enterprise Distributed Object Computing Conference (EDOC'09), 31. August - 4. September 2009, Auckland, New Zealand
+1. B. Wetzstein, P. Leitner, F. Rosenberg, I. Brandic, F. Leymann, S. Dustdar (2009). [__Monitoring and Analyzing Inﬂuential Factors of Business Process Performance__](edoc2009-branimon.pdf). In: Proceedings of the 13th IEEE International Enterprise Distributed Object Computing Conference (EDOC'09), 31. August - 4. September 2009, Auckland, New Zealand
 1. A. Michlmayr, F. Rosenberg, P. Leitner, S. Dustdar (2009). [__Service Provenance in QoS-Aware Web Service Runtimes__](icws2009.pdf). In: Proceedings of the 7th IEEE International Conference on Web Services (ICWS'09), 6.-10. July 2009, Los Angeles, USA
 1. F. Rosenberg, P. Leitner, A. Michlmayr, P. Celikovic, S. Dustdar (2009). [__Towards Composition as a Service - A Quality of Service Driven Approach__](wiss2009.pdf). In: Proceedings of the First IEEE Workshop on Information and Software as Service (WISS'09), co-located with the 25th International Conference on Data Engineering (ICDE'09), 29. March 2009, Shanghai, China
 1. F. Rosenberg, P. Leitner, A. Michlmayr, S. Dustdar (2008). [__Integrated Metadata Support for Web Service Runtimes__](mws2008.pdf). In: Proceedings of the Middleware for Web Services Workshop (MWS'08), co-located with the 12th IEEE International Distributed Object Computing Conference (EDOC'08), 15-19. September 2008, Munich, Germany
