@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title:            //__devops_life__// Ramblings around Cloud, DevOps, ... and travelling 
+title:            Ramblings around Cloud, DevOps, ... and travelling 
 locale:           en_US
-url:              http://www.devopslife.com
+url:              http://rosenberg.io
 
 
 # Jekyll configuration
