@@ -5,6 +5,19 @@ Framework:  Bootstrap 3.0
 */
 
 
+.wedding-header {
+  vertical-align: center;
+  text-align: center;
+  font-weight: bold;
+  color: #7AA344;
+  font-size: 32px;
+  font-family: 'Roboto', Arial, sans-serif;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 35px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+}
 
 .row-merge {
   width: 100%;
@@ -234,7 +247,7 @@ h5,
 h6 {
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 500;
-  color: #444;
+  color: #7AA344;
   margin-top: 0;
   margin-bottom: 15px;
   line-height: 1.15;
@@ -444,13 +457,22 @@ label {
   margin-bottom: 60px;
 }
 .section-headlines > h2 {
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 32px;
+  text-transform: uppercase;
+  color: #7AA344;
+  border-bottom: 2px solid #ddd;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 35px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
 }
 .section-headlines > h4 {
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 12px;
   text-transform: uppercase;
-  color: #777;
+  color: #7AA344;
   border-bottom: 2px solid #ddd;
   display: inline-block;
   padding-bottom: 10px;
@@ -494,7 +516,7 @@ label {
   display: inline-block;
   vertical-align: middle;
   width: 100%;
-  padding: 100px 0;
+  padding: 50px 0;
 }
 /*= JUMPER
 ---------------------------------------------------------------------------------------------- */
@@ -546,7 +568,7 @@ label {
 #portfolio .mix > div .media-desc {
   opacity: 0;
   filter: alpha(opacity=0);
-  background: #84c225  ;
+  background: #7AA344  ;
   background: rgba(132,194,37, 0.8);
   color: #fff;
   color: rgba(255, 255, 255, 0.7);
@@ -692,7 +714,7 @@ label {
   text-decoration: none !important;
 }
 .social-links a:hover {
-  color: #84c225  ;
+  color: #7AA344  ;
 }
 /*= BRANDS
 ---------------------------------------------------------------------------------------------- */
