@@ -4,22 +4,7 @@ title:  "New Website"
 date:   2019-02-08 15:50:03 +0100
 tags:   [relaunch, jekyll]
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Finally, I managed to update my website to the latest [Jekyll](https://jekyllrb.com/) version and the latest version of the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) theme. This allowed me to get rid of all my vulnerability warning that Github used to send me over the years.
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+I'll keep this updated as the months fly by. My next projects is the [About](/about) page, followed by my publications page. I have not published much lately but I want to keep a permanent record for myself here.
