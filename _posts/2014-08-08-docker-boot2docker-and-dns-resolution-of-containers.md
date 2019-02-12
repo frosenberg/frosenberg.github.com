@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Docker, boot2docker and DNS resolution of containers
 modified:
 categories: tech
@@ -11,7 +11,8 @@ date: 2014-08-8T20:10:44+02:00
 comments: true
 ---
 
-###... or how to setup a full development environment with docker (on Mac OS X)
+### ... or how to setup a full development environment with docker (on Mac OS X)
+
 
 <section id="table-of-contents" class="toc">
   <header>
