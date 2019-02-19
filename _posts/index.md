@@ -1,5 +1,5 @@
 ---
 layout: posts
-permalink: /posts
+permalink: /posts/
 author_profile: true
 ---
