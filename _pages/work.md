@@ -1,15 +1,118 @@
 ---
 layout: single
-title: Professional Work
+title: Work
 tags: [science, IP]
 permalink: /work/
 share: false
 ---
 
-[DBLP](http://www.informatik.uni-trier.de/~ley/pers/hd/r/Rosenberg:Florian.html) and [Google Scholar](http://scholar.google.at/citations?user=KK2le2UAAAAJ&hl=en) maintain high quality publications list. Below is the list as I maintain it - let's see for how long.
+## Open Source Projects
 
-## Journal Papers
+1. [Fabric for Deep Learning](https://github.com/IBM/FfDL). I was the originator of the project  with [Rania Khalaf](https://researcher.watson.ibm.com/researcher/view.php?person=us-rkhalaf) during my IBM days. The goal was to create a framework independent training infrastructure for deep learning models on distributed servers (CPUs and GPUs). 
 
+2. [Spring Cloud Dataflow for Kubernetes](https://docs.spring.io/spring-cloud-dataflow-server-kubernetes/docs/current/reference/htmlsingle/). I wrote the first implementation for Kubernetes allowing Spring Cloud Dataflow pipelines to be executed on a Kubernetes cluster. 
+
+
+## Patents
+
+1. **Systems management based on semantic models and low-level runtime state**\\
+    **Patent number**: 10203948\\
+    **Abstract**: Various embodiments manage deployable computing environments. In one embodiment, a semantic model of a computing environment is analyzed. The computing environment is deployed based on the analysis of the semantic model. The deployment of the computing environment includes executing one or more automation scripts. One or more changes in a state of the computing environment are identified, for each automation script executed during the deployment of the computing environment, based on executing the automation script. The semantic model is updated based on the one or more changes in state identified for each automation script.\\
+    **Filed**: September 9, 2016\\
+    **Date of Patent**: February 12, 2019\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Tamar Eilam, Fabio A. Oliveira, Florian Rosenberg
+
+1. **Implicit coordination for deployment of computing systems using a data sharing service**\\
+    **Patent number**: 9733856\\
+    **Abstract**: Various embodiments manage deployable computing environments. In one embodiment, a system model of a computing environment that includes a set of computing resources is analyzed. The system model at least describes properties of each of the set of computing nodes and identifies a plurality of configuration operations to be executed by each of the set of computing nodes during deployment. A set of dependency information is generated for each of the set of computing nodes based on analyzing the system model. The set of dependency information identifies at least one dependency between two or more of the plurality of configuration operations. An executable coordination operation is added to each of the plurality of configuration operations. The executable coordination operation automatically coordinates execution of the plurality of configuration operations on the computing node.\\
+    **Filed**: June 25, 2015\\
+    **Date of Patent**: August 15, 2017\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Hoi Y. Chan, Thomas Gschwind, Michael H. Kalantar, Lakshminaraya Renganarayana, Florian Rosenberg
+
+1. **Implicit coordination for deployment of computing systems using a data sharing service**\\
+    **Patent number**: 9665299\\
+    **Abstract**: Various embodiments manage deployable computing environments. In one embodiment, a system model of a computing environment that includes a set of computing resources is analyzed. The system model at least describes properties of each of the set of computing nodes and identifies a plurality of configuration operations to be executed by each of the set of computing nodes during deployment. A set of dependency information is generated for each of the set of computing nodes based on analyzing the system model. The set of dependency information identifies at least one dependency between two or more of the plurality of configuration operations. An executable coordination operation is added to each of the plurality of configuration operations. The executable coordination operation automatically coordinates execution of the plurality of configuration operations on the computing node.\\
+    **Filed**: March 31, 2015\\
+    **Date of Patent**: May 30, 2017\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Hoi Y. Chan, Thomas Gschwind, Michael H. Kalantar, Lakshminaraya Renganarayana, Florian Rosenberg
+
+1. **Testing functional correctness and idempotence of software automation scripts**\\
+    **Patent number**: 9501384\\
+    **Abstract**: Various embodiments automatically test software automation scripts. In one embodiment, at least one software automation script is obtained. The software automation script is configured to automatically place a computing system into a target state. A plurality of test cases for the software automation script is executed. Each of the plurality of test cases is a separate instance of the software automation script configured based at least on one or more different states of the computing system. The software automation script is determined to be one of idempotent and non-idempotent and/or one of convergent and non-convergent based on executing the plurality of test cases.\\
+    **Filed**: March 10, 2016\\
+    **Date of Patent**: November 22, 2016\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Tamar Eilam, Waldemar Hummer, Fabio A. Oliveira, Florian Rosenberg
+
+1. **Testing functional correctness and idempotence of software automation scripts**\\
+    **Patent number**: 9501385\\
+    **Abstract**: Various embodiments automatically test software automation scripts. In one embodiment, at least one software automation script is obtained. The software automation script is configured to automatically place a computing system into a target state. A plurality of test cases for the software automation script is executed. Each of the plurality of test cases is a separate instance of the software automation script configured based at least on one or more different states of the computing system. The software automation script is determined to be one of idempotent and non-idempotent and/or one of convergent and non-convergent based on executing the plurality of test cases.\\
+    **Filed**: March 10, 2016\\
+    **Date of Patent**: November 22, 2016\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Tamar Eilam, Waldemar Hummer, Fabio A. Oliveira, Florian Rosenberg
+
+1. **Systems management based on semantic models and low-level runtime state**\\
+    **Patent number**: 9483250\\
+    Abstract: Various embodiments manage deployable computing environments. In one embodiment, a semantic model of a computing environment is analyzed. The computing environment is deployed based on the analysis of the semantic model. The deployment of the computing environment includes executing one or more automation scripts. One or more changes in a state of the computing environment are identified, for each automation script executed during the deployment of the computing environment, based on executing the automation script. The semantic model is updated based on the one or more changes in state identified for each automation script.\\
+    **Filed**: September 15, 2014\\
+    **Date of Patent**: November 1, 2016\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Tamar Eilam, Fabio A. Oliveira, Florian Rosenberg\\
+
+1. **Flexible and modular load testing and monitoring of workloads**\\
+    Patent number: 9411702\\
+    Abstract: Various embodiments monitor a distributed software system. In one embodiment, at least one monitoring policy associated with a distributed software system is selected. A policy type associated with the monitoring policy is identified. An installer is selected based on the policy type associated with the monitoring policy. Monitoring software is installed in a computing environment utilizing the installer. The monitoring software is configured to monitor the distributed software system based on the monitoring policy.\\
+    **Filed**: August 30, 2013\\
+    **Date of Patent**: August 9, 2016\\
+    **Assignee**: GLOBALFOUNDRIES INC.\\
+    **Inventors**: Tamar Eilam, Thomas Gschwind, Florian Rosenberg, Andreas Schade
+
+1. **Designing and cross-configuring software**\\
+    **Patent number**: 9405529\\
+    **Abstract**: Various embodiments create a cross-configuration software module for cross-configuring software entities. In one embodiment, a first set of requirements and at least a second set of requirements are obtained. Each of the first and second set of requirements identify at least one of a set of software entities and a set of hardware components required to be present on at least one system including software entities to be cross-configured. At least one set of operations is obtained. The set of operations includes at least one executable instruction that configures a first software entity with a second software entity. A first configuration definition is generated including at least the first set of requirements and the at least one set of operations. A second configuration definition is generated including at least the second set of requirements. The first and second configuration definitions are stored within a cross-configuration software module.\\
+    **Filed**: October 30, 2015\\
+    **Date of Patent**: August 2, 2016\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Daniel C. Berg, Tamar Eilam, Michael H. Kalantar, Alexander Kofman, Fabio A. Oliveira, Florian Rosenberg, Gilad M. Saadoun
+
+1. **Testing functional correctness and idempotence of software automation scripts**\\
+    **Patent number**: 9348738\\
+    **Abstract**: Various embodiments automatically test software automation scripts. In one embodiment, at least one software automation script is obtained. The software automation script is configured to automatically place a computing system into a target state. A plurality of test cases for the software automation script is executed. Each of the plurality of test cases is a separate instance of the software automation script configured based at least on one or more different states of the computing system. The software automation script is determined to be one of idempotent and non-idempotent and/or one of convergent and non-convergent based on executing the plurality of test cases.\\
+    **Filed**: September 19, 2013\\
+    **Date of Patent**: May 24, 2016\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Tamar Eilam, Waldemar Hummer, Fabio A. Oliveira, Florian Rosenberg
+
+1. **Testing functional correctness and idempotence of software automation scripts**\\
+    **Patent number**: 9317410\\
+    **Abstract**: Various embodiments automatically test software automation scripts. In one embodiment, at least one software automation script is obtained. The software automation script is configured to automatically place a computing system into a target state. A plurality of test cases for the software automation script is executed. Each of the plurality of test cases is a separate instance of the software automation script configured based at least on one or more different states of the computing system. The software automation script is determined to be one of idempotent and non-idempotent and/or one of convergent and non-convergent based on executing the plurality of test cases.\\
+    **Filed**: March 15, 2013\\
+    **Date of Patent**: April 19, 2016\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Tamar Eilam, Waldemar Hummer, Fabio A. Oliveira, Florian Rosenberg
+
+1. **Designing and cross-configuring software**\\
+    **Patent number**: 8793652\\
+    **Abstract**: Various embodiments create a cross-configuration software module for cross-configuring software entities. In one embodiment, a first set of requirements and at least a second set of requirements are obtained. Each of the first and second set of requirements identify at least one of a set of software entities and a set of hardware components required to be present on at least one system including software entities to be cross-configured. At least one set of operations is obtained. The set of operations includes at least one executable instruction that configures a first software entity with a second software entity. A first configuration definition is generated including at least the first set of requirements and the at least one set of operations. A second configuration definition is generated including at least the second set of requirements. The first and second configuration definitions are stored within a cross-configuration software module.\\
+    **Filed**: June 7, 2012\\
+    **Date of Patent**: July 29, 2014\\
+    **Assignee**: International Business Machines Corporation\\
+    **Inventors**: Daniel C. Berg, Tamar Eilam, Michael H. Kalantar, Alexander Kofman, Fabio A. Oliveira, Florian Rosenberg, Gilad Saadoun
+
+
+## Publications
+
+[DBLP](http://www.informatik.uni-trier.de/~ley/pers/hd/r/Rosenberg:Florian.html) and [Google Scholar](http://scholar.google.at/citations?user=KK2le2UAAAAJ&hl=en) also maintain high quality publications list. 
+
+### Journal Papers
+
+1. A. Milenkoski, A. Iosup, S. Kounev, K. Sachs, D. E. Mularz, J. A. Curtiss, J. Ding, F. Rosenberg, P. Rygielski (2018). __CUP: A Formalism for Expressing Cloud Usage Patterns for Experts and Non-Experts__. IEEE Cloud Computing 5(3): 65-76 
+1. B. Bhattacharjee, S. Boag, C. Doshi, P. Dube, B. Herta, V. Ishakian, K. R. Jayaram, Rania Khalaf, A. Krishna, Y. B. Li, V. Muthusamy, R. Puri, Y. Ren, F. Rosenberg, S. R. Seelam, Y. Wang, J. M. Zhang, L. Zhang (2017). __IBM Deep Learning Service__. IBM Journal of Research and Development 61(4): 10 
+1. M. H. Kalantar, F. Rosenberg, J. Doran, T. Eilam, M. Elder, F. Oliveira, E. C. Snible, T. Roth  (2014). __Weaver: Language and runtime for software defined environments__. IBM Journal of Research and Development 58(2/3)
 1. O. Moser, F. Rosenberg, S. Dustdar (2012). [__Domain-Specific Service Selection for Composite Services__](../assets/pdfs/tse2012.pdf). IEEE Transactions on Software Engineering, 38(4), p. 828-843, IEEE Computer Society
 2. B. Wetzstein, P. Leitner, F. Rosenberg, S. Dustdar, F. Leymann (February 2011). [__Identifying Influential Factors of Business Process Performance Using Dependency Analysis__](../assets/pdfs/eis10-branimon.pdf). Enterprise Information Systems, 5(1), p. 79-98, Taylor & Francis
 3. A. Michlmayr, F. Rosenberg, P. Leitner, S. Dustdar (July-September 2010). [__End-to-End Support for QoS-Aware Service Selection, Binding and Mediation in VRESCo__](../assets/pdfs/tsc2010.pdf). IEEE Transactions on Services Computing, 3(3), p. 193-205, IEEE Computer Society
@@ -23,10 +126,9 @@ share: false
 1. M. Mrissa, C. Ghedira, D. Benslimane, Z. Maamar, F. Rosenberg, S. Dustdar (November 2007). [__A Context-based Mediation Approach to Compose Semantic Web Services__](../assets/pdfs/toit2007.pdf). ACM Transactions on Internet Technology, Special Issue on Semantic Web Services: Issues, Solutions and Applications, 8(1), p. 4:1-4:23, ACM Press
 1. M. Baldauf, S. Dustdar, F. Rosenberg (2007). [__A Survey On Context-Aware Systems__](../assets/pdfs/ijahuc2007.pdf). International Journal of Ad Hoc and Ubiquitous Computing, 2(4), p. 263-277, Inderscience Publishers
 
+### Conference, Workshop and Demo Papers
 
-## Conference, Workshop and Demo Papers
-
-1.  W. Hummer, F. Rosenberg, F. Oliveira, T. Eilam (2013). [__Testing Idempotence for Infrastructure as Code__](../assets/pdfs/middleware2013.pdf). In: Proceedings of the 14th ACM/IFIP/USENIX International Middleware Conference (Middleware'13), 9-13. December 2013, Beijing, China. [**Awared Best Student Paper**]
+1. W. Hummer, F. Rosenberg, F. Oliveira, T. Eilam (2013). [__Testing Idempotence for Infrastructure as Code__](../assets/pdfs/middleware2013.pdf). In: Proceedings of the 14th ACM/IFIP/USENIX International Middleware Conference (Middleware'13), 9-13. December 2013, Beijing, China. [**Awared Best Student Paper**]
 1. W. Hummer, F. Rosenberg, F. Oliveira, T. Eilam (2013). [__Automated Testing of Chef Automation Scripts__](../assets/pdfs/middleware2013-demo.pdf). In: Proceedings of the 14th ACM/IFIP/USENIX International Middleware Conference (Demo Track) (Middleware'13), 9-13. December 2013, Beijing, China
 1. D. Jayasinghe, C. Pu, F. Oliveira, F. Rosenberg, T. Eilam (2013). [__AESON: A Model-Driven and Fault Tolerant Composite Deployment Runtime for IaaS Clouds__](../assets/pdfs/scc2013.pdf). In: Proceedings of the 10th International Conference on Services Computing (SCC'13), June 27-July 2, 2013, 2013, Santa Clara, CA, USA
 1. F. Oliveira, T. Eilam, M. Kalantar, F. Rosenberg (2012). [__Semantically-Rich Composition of Virtual Images__](../assets/pdfs/cloud2012.pdf). In: Proceedings of the 5th International Conference on Cloud Computing (CLOUD'12), 24.-29. June 2012, Hawaii, USA
@@ -63,7 +165,7 @@ share: false
 1. F. Rosenberg, S. Dustdar (2005). [__Design and Implementation of a Service-Oriented Business Rules Broker__](../assets/pdfs/sos4co2005.pdf). In: Proceedings of the 1st IEEE International Workshop on Service-oriented Solutions for Cooperative Organizations (SoS4CO'05), co-located with the 7th International IEEE Conference on E-Commerce Technology (CEC'05), 19. July 2005, Munich, Germany
 
 
-### Book Chapters
+#### Book Chapters
 
 1. W. Hummer, P. Leitner, A. Michlmayr, F. Rosenberg, S. Dustdar (2010). __VRESCo - Vienna Runtime Environment for Service-oriented Computing__. In: Service Engineering. European Research Results, Springer (Editor(s): Schahram Dustar and Fei Li).
 1. A. Michlmayr, P. Leitner, F. Rosenberg, S. Dustdar (2010). __Event Processing in Web Service Runtime Environments__. In: Handbook of Research on Advanced Distributed Event-Based Systems, Publish/Subscribe and Message Filtering Technologies, IGI Global (Editor(s): Annika Hinze and Alex Buchmann).
@@ -71,6 +173,6 @@ share: false
 1. F. Rosenberg, A. Michlmayr, C. Nagl, S. Dustdar (2009). __Distributed Business Rules within Service-Centric Systems__. In: Handbook of Research on Emerging Rule-Based Languages and Technologies: Open Solutions and Approaches, IGI Global (Editor(s): Dragan Gasevic, Adrian Giurca, Kuldar Taveter).
 1. C. Platzer, F. Rosenberg, S. Dustdar (1. November 2007). __Enhancing Web Service Discovery and Monitoring with Quality of Service Information__. In: Securing Web Services: Practical Usage of Standards and Specifications, Idea Publishing Inc. (Editor(s): Periorellis Panos).
 
-### Thesis
+#### Thesis
 
 1. F. Rosenberg (June 2009). [__QoS-Aware Composition of Adaptive Service-Oriented Systems__](../assets/pdfs/dissertation.pdf). PhD Thesis, Technical University Vienna.
