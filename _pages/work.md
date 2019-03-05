@@ -1,9 +1,10 @@
 ---
 layout: single
 title: Work
-tags: [science, IP]
+tags: [work, publication, patents, papers, open source]
 permalink: /work/
 share: false
+toc: true
 ---
 
 ## Open Source Projects
@@ -11,7 +12,6 @@ share: false
 1. [Fabric for Deep Learning](https://github.com/IBM/FfDL). I was the originator of the project  with [Rania Khalaf](https://researcher.watson.ibm.com/researcher/view.php?person=us-rkhalaf) during my IBM days. The goal was to create a framework independent training infrastructure for deep learning models on distributed servers (CPUs and GPUs). 
 
 2. [Spring Cloud Dataflow for Kubernetes](https://docs.spring.io/spring-cloud-dataflow-server-kubernetes/docs/current/reference/htmlsingle/). I wrote the first implementation for Kubernetes allowing Spring Cloud Dataflow pipelines to be executed on a Kubernetes cluster. 
-
 
 ## Patents
 
@@ -165,7 +165,7 @@ share: false
 1. F. Rosenberg, S. Dustdar (2005). [__Design and Implementation of a Service-Oriented Business Rules Broker__](../assets/pdfs/sos4co2005.pdf). In: Proceedings of the 1st IEEE International Workshop on Service-oriented Solutions for Cooperative Organizations (SoS4CO'05), co-located with the 7th International IEEE Conference on E-Commerce Technology (CEC'05), 19. July 2005, Munich, Germany
 
 
-#### Book Chapters
+### Book Chapters
 
 1. W. Hummer, P. Leitner, A. Michlmayr, F. Rosenberg, S. Dustdar (2010). __VRESCo - Vienna Runtime Environment for Service-oriented Computing__. In: Service Engineering. European Research Results, Springer (Editor(s): Schahram Dustar and Fei Li).
 1. A. Michlmayr, P. Leitner, F. Rosenberg, S. Dustdar (2010). __Event Processing in Web Service Runtime Environments__. In: Handbook of Research on Advanced Distributed Event-Based Systems, Publish/Subscribe and Message Filtering Technologies, IGI Global (Editor(s): Annika Hinze and Alex Buchmann).
@@ -173,6 +173,6 @@ share: false
 1. F. Rosenberg, A. Michlmayr, C. Nagl, S. Dustdar (2009). __Distributed Business Rules within Service-Centric Systems__. In: Handbook of Research on Emerging Rule-Based Languages and Technologies: Open Solutions and Approaches, IGI Global (Editor(s): Dragan Gasevic, Adrian Giurca, Kuldar Taveter).
 1. C. Platzer, F. Rosenberg, S. Dustdar (1. November 2007). __Enhancing Web Service Discovery and Monitoring with Quality of Service Information__. In: Securing Web Services: Practical Usage of Standards and Specifications, Idea Publishing Inc. (Editor(s): Periorellis Panos).
 
-#### Thesis
+### Thesis
 
 1. F. Rosenberg (June 2009). [__QoS-Aware Composition of Adaptive Service-Oriented Systems__](../assets/pdfs/dissertation.pdf). PhD Thesis, Technical University Vienna.
