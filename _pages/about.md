@@ -1,12 +1,13 @@
 ---
 layout: single
 title: About me
-tags: [about,ibm,csiro,aim,tuwien,dsg]
+tags: [about,ibm,csiro,simcorp,tuwien,dsg]
 permalink: /about/
 share: false
 ---
 
-Currently, I'm the Global Head of Engineering at [AIM Software GmbH](https://aimsoftware.com) in Vienna responsible for the GAIN EDM (Enterprise Data Management) product suite.
+Currently, I'm the Technical Director of [Crayon](https://www.crayon.com/en/AI-Center-of-Excellence/)'s AI Center of Excellence for Europe. I am responsible for the technical strategy of the AI practise, technical delivery and I lead the Data Science and 
+Engineering teams.
 
 Before that, I held various leadership positions most noteably I spent some wonderful years at IBM in Vienna and New York and CSIRO/Data61 in Australia. I got to spend a lot of time working on cool stuff related to AI/ML services (such as [IBM DLaaS](https://www.ibm.com/cloud/deep-learning)), Cloud, DevOps tooling that resulted in a number of patents as well.
 

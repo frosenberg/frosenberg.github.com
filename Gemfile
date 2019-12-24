@@ -8,11 +8,12 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3.8.5"
+gem "jekyll", "~> 4.0.0"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minimal-mistakes-jekyll"
+gem "minimal-mistakes-jekyll", "~> 4.17.2"
 
+gem "jemoji"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -20,8 +21,8 @@ gem "minimal-mistakes-jekyll"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
-  gem "jekyll-remote-theme"
+  gem "jekyll-feed", "~> 0.13"
+  gem "jekyll-remote-theme", github: "benbalter/jekyll-remote-theme", branch: "master"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
