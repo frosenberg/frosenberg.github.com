@@ -2,6 +2,7 @@ _site/*
 _theme_packages/*
 .jekyll-metadata
 .sass-cache/*
+.jekyll-cache
 
 Thumbs.db
 .DS_Store
@@ -10,3 +11,4 @@ Thumbs.db
 
 .rbenv-version
 .rvmrc
+
