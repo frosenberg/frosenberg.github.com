@@ -48,7 +48,7 @@ At Crayon, our trusted AI-360 framework addresses these and other challenges pos
 
 If you do decide to seek the expertise of an AI consulting services partner, reach out to us and we will evaluate the AI-360 journey that best matches your needs. A proper opportunity assessment, like Crayon’s AI-360 Discovery offering, in which the business problem is identified, the data is assessed and a solution is conceptualized, is a good place to start and will mitigate the effects of the above and more challenges down the road during the planning and the development of a full project. Other Crayon offerings, like AI-360 MVP, AI-360 Production and AI-360 Model Management as a Service, will be more suitable if you are further in your AI maturity ladder and are ready to implement a solution. Here as well, Crayon’s AI-360 framework will have your back so that no technical or business challenge keeps your AI project from becoming a success.
 
-**References**
+## References
 
 [1] [https://hbr.org/2019/02/how-to-choose-your-first-ai-project]() (Last visited: February 17, 2020)
 
