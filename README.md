@@ -2,14 +2,12 @@
 
 ## Prerequisites 
 
-- Ruby Version Manager installed
-- Ruby 2.6.0 installed 
+- Ruby 3.2.x installed 
 
 ## Develop
 
-
 ```sh
-rvm use 2.6.0 # in case this is not loaded
+bundle install
 bundle exec jekyll serve -l --watch 
 ```
 

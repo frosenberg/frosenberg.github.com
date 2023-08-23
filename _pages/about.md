@@ -14,4 +14,4 @@ Before that, I held various leadership positions most notably I spent some wonde
 
 I was also fortunate enough to spend some wonderful years in academia. I completed my PhD in June 2009 at [TU Wien](http://www.tuwien.ac.at), Austria where I was a member of the [Distributed Systems Group](http://dsg.tuwien.ac.at). My main focus was on service-oriented architectures, in particular how to engineer resilient applications that are composed of microservices, just that we did not call it microservices back then.
 
-In my free time, I enjoy spending time with my family, being outdoors and various kinds of sports like Crossfit (proud member of [CF Vienna](http://crossfitvienna.at)) and snowboarding.
+In my free time, I enjoy spending time with my kids, being outdoors and various kinds of sports like Taekwondo or snowboarding.

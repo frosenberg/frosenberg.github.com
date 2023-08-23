@@ -8,10 +8,10 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.0.0"
+gem "jekyll"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minimal-mistakes-jekyll", "~> 4.17.2"
+gem "minimal-mistakes-jekyll"
 
 gem "jemoji"
 
@@ -21,13 +21,9 @@ gem "jemoji"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.13"
+  gem "jekyll-feed"
   gem "jekyll-remote-theme", github: "benbalter/jekyll-remote-theme", branch: "master"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-# Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
-
