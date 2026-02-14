@@ -1,14 +1,14 @@
-_site/*
-_theme_packages/*
-.jekyll-metadata
-.sass-cache/*
-.jekyll-cache
+# Dependencies
+node_modules/
 
-Thumbs.db
+# Next.js
+.next/
+out/
+
+# Build
+*.tsbuildinfo
+
+# OS
 .DS_Store
-
-!.gitkeep
-
-.rbenv-version
-.rvmrc
-
+Thumbs.db
+node_modules

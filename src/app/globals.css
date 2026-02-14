@@ -1,0 +1,198 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-bg: #0A0A0F;
+  --color-surface: #12121A;
+  --color-surface-alt: #1A1A26;
+  --color-border: #2A2A3A;
+  --color-border-light: #3A3A4A;
+  --color-primary: #6366F1;
+  --color-primary-light: #818CF8;
+  --color-primary-dim: #4F46E5;
+  --color-accent: #F59E0B;
+  --color-accent-light: #FBBF24;
+  --color-text: #E2E8F0;
+  --color-text-muted: #94A3B8;
+  --color-text-heading: #F8FAFC;
+  --color-text-dim: #64748B;
+
+  --font-display: "Sora", sans-serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Dot grid background pattern */
+.bg-dot-grid {
+  background-image: radial-gradient(circle, var(--color-border) 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+/* Gradient accent line */
+.gradient-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+}
+
+/* Section alternating backgrounds */
+.section-alt {
+  background-color: var(--color-surface);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-light);
+}
+
+/* Blog prose overrides for dark theme */
+.prose-blog {
+  --tw-prose-body: var(--color-text);
+  --tw-prose-headings: var(--color-text-heading);
+  --tw-prose-lead: var(--color-text-muted);
+  --tw-prose-links: var(--color-primary-light);
+  --tw-prose-bold: var(--color-text-heading);
+  --tw-prose-counters: var(--color-text-dim);
+  --tw-prose-bullets: var(--color-primary);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-text-muted);
+  --tw-prose-quote-borders: var(--color-primary);
+  --tw-prose-captions: var(--color-text-dim);
+  --tw-prose-code: var(--color-primary-light);
+  --tw-prose-pre-code: var(--color-text);
+  --tw-prose-pre-bg: var(--color-surface);
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
+  --tw-prose-invert-body: var(--color-text);
+  --tw-prose-invert-headings: var(--color-text-heading);
+  --tw-prose-invert-links: var(--color-primary-light);
+}
+
+.prose-blog h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-heading);
+}
+
+.prose-blog h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-heading);
+}
+
+.prose-blog h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-heading);
+}
+
+.prose-blog p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+.prose-blog a {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.prose-blog a:hover {
+  color: var(--color-primary);
+}
+
+.prose-blog pre {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose-blog pre code {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: transparent;
+  padding: 0;
+}
+
+.prose-blog code:not(pre code) {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-primary-light);
+  background: var(--color-surface);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-border);
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose-blog li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.prose-blog ol li {
+  padding-left: 0.25rem;
+}
+
+.prose-blog li::marker {
+  color: var(--color-primary);
+}
