@@ -1,16 +1,24 @@
-# Personal Website
+# rosenberg.io
 
-## Prerequisites 
-
-- Ruby 3.2.x installed 
+Personal portfolio website built with Next.js, Tailwind CSS, and Framer Motion.
 
 ## Develop
 
 ```sh
-bundle install
-bundle exec jekyll serve -l --watch 
+npm install
+npm run dev
 ```
 
-## Update
+## Build
 
-Commit the code the git repo and Github pages with automatically build the website and update it.
+```sh
+npm run build
+```
+
+The static output is generated in the `out/` directory.
+
+## Deploy
+
+Commits to `master` trigger a GitHub Actions workflow that builds and deploys to GitHub Pages.
+
+**Note:** GitHub repo Settings → Pages → Source must be set to "GitHub Actions".
