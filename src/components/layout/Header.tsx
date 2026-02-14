@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { NAV_ITEMS } from "@/lib/constants";
 import { useActiveSection } from "@/hooks/useActiveSection";
+import { useTheme } from "@/hooks/useTheme";
 import { cn } from "@/lib/cn";
 
 const sectionIds = NAV_ITEMS.map((item) => item.href.replace("/#", ""));
@@ -12,6 +13,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const activeSection = useActiveSection(sectionIds);
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -55,14 +57,35 @@ export function Header() {
           ))}
         </ul>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-text-muted hover:text-text-heading transition-colors"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2">
+          {/* Theme toggle */}
+          <button
+            onClick={toggle}
+            aria-label={
+              theme === "light"
+                ? "Switch to dark mode"
+                : "Switch to light mode"
+            }
+            className="text-text-muted hover:text-text-heading transition-colors p-1.5 rounded-md hover:bg-surface"
+          >
+            {theme === "light" ? (
+              <Moon size={18} strokeWidth={1.75} />
+            ) : theme === "dark" ? (
+              <Sun size={18} strokeWidth={1.75} />
+            ) : (
+              <div className="w-[18px] h-[18px]" />
+            )}
+          </button>
+
+          {/* Mobile menu toggle */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden text-text-muted hover:text-text-heading transition-colors"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
