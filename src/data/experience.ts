@@ -76,7 +76,7 @@ export const experiences: Experience[] = [
     company: "IBM",
     role: "Senior Technical Staff Member (STSM)",
     location: "Vienna & New York",
-    period: "2012 — 2017",
+    period: "2011 — 2017",
     description:
       "Held various leadership positions working on AI/ML services, Cloud, and DevOps tooling. Co-created IBM Deep Learning as a Service (DLaaS) and contributed to cloud infrastructure automation. Resulted in 11 patents.",
     highlights: [
@@ -90,7 +90,7 @@ export const experiences: Experience[] = [
     company: "CSIRO / Data61",
     role: "Research Scientist",
     location: "Sydney, Australia",
-    period: "2010 — 2012",
+    period: "2009 — 2011",
     description:
       "Conducted research on semantic web technologies, service-oriented architectures, and linked data. Contributed to multiple publications on web service composition and semantic annotations.",
     highlights: [
