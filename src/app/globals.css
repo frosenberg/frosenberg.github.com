@@ -2,30 +2,49 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-bg: #0A0A0F;
-  --color-surface: #12121A;
-  --color-surface-alt: #1A1A26;
-  --color-border: #2A2A3A;
-  --color-border-light: #3A3A4A;
-  --color-primary: #6366F1;
-  --color-primary-light: #818CF8;
-  --color-primary-dim: #4F46E5;
-  --color-accent: #F59E0B;
-  --color-accent-light: #FBBF24;
-  --color-text: #E2E8F0;
-  --color-text-muted: #94A3B8;
-  --color-text-heading: #F8FAFC;
-  --color-text-dim: #64748B;
+  --color-sheet: var(--sheet);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-signal: var(--signal);
+  --color-signal-fill: var(--signal-fill);
+  --color-signal-fill-hover: var(--signal-fill-hover);
 
-  --font-display: "Sora", sans-serif;
-  --font-body: "Source Sans 3", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  --font-cond: var(--font-barlow-cond), var(--font-barlow), sans-serif;
 
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-draw: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Dark is the default; the toggle sets data-theme="light" on <html>. */
+:root {
+  color-scheme: dark;
+  --sheet: #0A0A0F;
+  --panel: #12121A;
+  --ink: #E2E8F0;
+  --ink-muted: #94A3B8;
+  --line: #2E2E40;
+  --signal: #818CF8;
+  --signal-fill: #4F46E5;
+  --signal-fill-hover: #4338CA;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --sheet: #E9ECEE;
+  --panel: #F6F7F8;
+  --ink: #15181C;
+  --ink-muted: #545E68;
+  --line: #A4ADB6;
+  --signal: #2346D8;
+  --signal-fill: #2346D8;
+  --signal-fill-hover: #1B37B0;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -35,164 +54,121 @@ html {
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-body);
+  background-color: var(--color-sheet);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: var(--color-primary);
+  background-color: var(--color-signal-fill);
   color: white;
 }
 
-/* Dot grid background pattern */
-.bg-dot-grid {
-  background-image: radial-gradient(circle, var(--color-border) 0.5px, transparent 0.5px);
-  background-size: 24px 24px;
-}
-
-/* Gradient accent line */
-.gradient-line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
-}
-
-/* Section alternating backgrounds */
-.section-alt {
-  background-color: var(--color-surface);
-}
-
-/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: var(--color-sheet);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
+  background: var(--color-line);
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-border-light);
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
 }
 
-/* Blog prose overrides for dark theme */
+/* Tabular figures for years, dates and patent numbers */
+.figures {
+  font-family: var(--font-cond);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Career graph: the focus ring is drawn inside the SVG */
+.graph-node:focus {
+  outline: none;
+}
+
+.graph-node .focus-ring {
+  opacity: 0;
+}
+
+.graph-node:focus-visible .focus-ring {
+  opacity: 1;
+}
+
+.graph-node:hover .node-label,
+.graph-node:focus-visible .node-label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Blog prose: ink on the drafting sheet */
 .prose-blog {
-  --tw-prose-body: var(--color-text);
-  --tw-prose-headings: var(--color-text-heading);
-  --tw-prose-lead: var(--color-text-muted);
-  --tw-prose-links: var(--color-primary-light);
-  --tw-prose-bold: var(--color-text-heading);
-  --tw-prose-counters: var(--color-text-dim);
-  --tw-prose-bullets: var(--color-primary);
-  --tw-prose-hr: var(--color-border);
-  --tw-prose-quotes: var(--color-text-muted);
-  --tw-prose-quote-borders: var(--color-primary);
-  --tw-prose-captions: var(--color-text-dim);
-  --tw-prose-code: var(--color-primary-light);
-  --tw-prose-pre-code: var(--color-text);
-  --tw-prose-pre-bg: var(--color-surface);
-  --tw-prose-th-borders: var(--color-border);
-  --tw-prose-td-borders: var(--color-border);
-  --tw-prose-invert-body: var(--color-text);
-  --tw-prose-invert-headings: var(--color-text-heading);
-  --tw-prose-invert-links: var(--color-primary-light);
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-ink-muted);
+  --tw-prose-links: var(--color-signal);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-ink-muted);
+  --tw-prose-bullets: var(--color-ink-muted);
+  --tw-prose-hr: var(--color-line);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-signal);
+  --tw-prose-captions: var(--color-ink-muted);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-pre-code: var(--color-ink);
+  --tw-prose-pre-bg: var(--color-panel);
+  --tw-prose-th-borders: var(--color-line);
+  --tw-prose-td-borders: var(--color-line);
+  font-size: 1.125rem;
 }
 
 .prose-blog h2 {
-  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-text-heading);
+  margin-bottom: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-line);
 }
 
 .prose-blog h3 {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.3125rem;
   font-weight: 600;
   margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  color: var(--color-text-heading);
-}
-
-.prose-blog h4 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--color-text-heading);
 }
 
 .prose-blog p {
-  margin-bottom: 1.25rem;
-  line-height: 1.8;
+  line-height: 1.65;
 }
 
 .prose-blog a {
-  color: var(--color-primary-light);
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: color 0.15s;
-}
-
-.prose-blog a:hover {
-  color: var(--color-primary);
 }
 
 .prose-blog pre {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  padding: 1.25rem;
-  overflow-x: auto;
-  margin: 1.5rem 0;
-}
-
-.prose-blog pre code {
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: var(--color-text);
-  background: transparent;
-  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: 0;
 }
 
 .prose-blog code:not(pre code) {
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  color: var(--color-primary-light);
-  background: var(--color-surface);
-  padding: 0.15rem 0.4rem;
-  border-radius: 0.25rem;
-  border: 1px solid var(--color-border);
+  font-size: 0.9em;
+  background: var(--color-panel);
+  padding: 0.1rem 0.3rem;
 }
 
-.prose-blog ul,
-.prose-blog ol {
-  margin: 1.25rem 0;
-  padding-left: 1.5rem;
-}
-
-.prose-blog li {
-  margin-bottom: 0.5rem;
-  line-height: 1.7;
-}
-
-.prose-blog ol li {
-  padding-left: 0.25rem;
-}
-
-.prose-blog li::marker {
-  color: var(--color-primary);
+.prose-blog code:not(pre code)::before,
+.prose-blog code:not(pre code)::after {
+  content: none;
 }

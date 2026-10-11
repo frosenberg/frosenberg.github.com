@@ -1,25 +1,22 @@
 import type { Metadata } from "next";
-import { Sora, Source_Sans_3, JetBrains_Mono } from "next/font/google";
+import { Barlow, Barlow_Semi_Condensed } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SITE } from "@/lib/constants";
+import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
-const sora = Sora({
+const barlow = Barlow({
   subsets: ["latin"],
-  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-barlow",
   display: "swap",
 });
 
-const sourceSans = Source_Sans_3({
+const barlowCond = Barlow_Semi_Condensed({
   subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["500", "600"],
+  variable: "--font-barlow-cond",
   display: "swap",
 });
 
@@ -56,20 +53,22 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${sourceSans.variable} ${jetbrainsMono.variable}`}
+      className={`${barlow.variable} ${barlowCond.variable}`}
+      suppressHydrationWarning
     >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
       <body>
         <a
-          href="/#about"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg"
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-ink focus:text-sheet"
         >
           Skip to content
         </a>
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft, Calendar } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
 import { blogPosts } from "@/data/blog-posts";
+import { formatDate } from "@/lib/format";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -31,39 +30,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!post) notFound();
 
   return (
-    <div className="pt-24 pb-16">
-      <article className="max-w-3xl mx-auto px-6">
+    <div className="pt-24 pb-20 md:pt-32">
+      <article className="max-w-6xl mx-auto px-4 sm:px-6">
         <Link
           href="/#blog"
-          className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-text-heading transition-colors mb-8"
+          className="font-cond font-medium text-ink-muted hover:text-ink underline underline-offset-4 decoration-1"
         >
-          <ArrowLeft size={14} />
-          Back
+          All writing
         </Link>
 
-        <header className="mb-10">
-          <div className="flex items-center gap-2 text-sm text-text-dim mb-4">
-            <Calendar size={14} />
-            <time dateTime={post.date}>
-              {new Date(post.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </time>
-          </div>
-          <h1 className="font-display text-3xl md:text-4xl font-bold text-text-heading leading-tight">
+        <header className="mt-8 mb-12">
+          <h1 className="max-w-[22ch] text-[2.25rem] md:text-[3rem] font-semibold leading-[1.05] tracking-tight">
             {post.title}
           </h1>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {post.tags.map((tag) => (
-              <Badge key={tag}>{tag}</Badge>
-            ))}
-          </div>
+          <p className="mt-5 figures font-medium text-ink-muted">
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+            <span className="font-sans">, filed under {post.tags.join(", ")}</span>
+          </p>
         </header>
 
         <div
-          className="prose prose-invert prose-blog max-w-none"
+          className="prose prose-blog max-w-[65ch]"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>

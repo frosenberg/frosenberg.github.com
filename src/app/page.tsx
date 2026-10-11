@@ -12,16 +12,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="gradient-line" />
       <About />
       <FocusAreas />
-      <div className="gradient-line" />
       <Experience />
       <OpenSource />
-      <div className="gradient-line" />
       <Patents />
       <Publications />
-      <div className="gradient-line" />
       <Blog />
       <Contact />
     </>

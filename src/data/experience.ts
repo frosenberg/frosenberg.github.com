@@ -2,22 +2,42 @@ import type { Experience } from "@/types";
 
 export const experiences: Experience[] = [
   {
+    id: "truvio",
+    company: "Truvio",
+    url: "https://truvio.com/",
+    role: "Chief Technology Officer",
+    location: "Stockholm, Sweden & Vienna, Austria",
+    period: "2026 — Present",
+    description:
+      "Leading technology for Truvio, the Insight Partners–backed software group formed by uniting four Microsoft Dynamics 365 ISVs (SignUp Software, SKsoft, DynamicWeb and Axtension). Truvio embeds automation and AI directly into Dynamics 365 Finance & Operations, Business Central and Commerce, serving 5,000+ customers in 80+ countries through 400+ partners.",
+    highlights: [
+      "Setting technology strategy and architecture for a unified portfolio: ExFlow (AP automation), SKsoft (banking & treasury), DynamicWeb (commerce & PIM) and Axtension (project & production)",
+      "Driving the AI roadmap, including TruvioSense, AI-driven ERP intelligence built natively into Dynamics 365",
+      "Leading product engineering across an organisation of 480+ people following the brand consolidation",
+    ],
+    tags: ["Leadership", "AI/ML", "ERP", "Microsoft Dynamics 365", "Platform"],
+  },
+  {
+    id: "esko",
     company: "Esko (part of Veralto)",
+    url: "https://www.esko.com/",
     role: "Chief Technology Officer & Chief Information Officer",
     location: "Gent, Belgium & Vienna, Austria",
-    period: "2025 — Present",
+    period: "2025 — 2026",
     description:
-      "Leading technology strategy and vision across cloud and AI initiatives for a global leader in packaging software solutions serving CPG and pharmaceutical industries. Directing engineering and IT leadership for 460+ FTEs across Europe, India, and the United States.",
+      "Led technology strategy and vision across cloud and AI initiatives for a global leader in packaging software solutions serving CPG and pharmaceutical industries. Directed engineering and IT leadership for 460+ FTEs across Europe, India, and the United States.",
     highlights: [
-      "Establishing Product Architecture Board governance and comprehensive AI strategy roadmap",
-      "Building and leading AI engineering teams, embedding AI into the product portfolio",
-      "Championing adoption of modern development practices across the software portfolio",
-      "Overseeing distributed teams delivering products contributing $300M+ in annual revenue",
+      "Established Product Architecture Board governance and a comprehensive AI strategy roadmap",
+      "Built and led AI engineering teams, embedding AI into the product portfolio",
+      "Championed adoption of modern development practices across the software portfolio",
+      "Oversaw distributed teams delivering products contributing $300M+ in annual revenue",
     ],
     tags: ["Leadership", "Cloud", "AI/ML", "Packaging Software", "ERP"],
   },
   {
+    id: "crayon-cto",
     company: "Crayon",
+    url: "https://www.crayon.com/",
     role: "Chief Technology Officer",
     location: "Vienna, Austria & Oslo, Norway",
     period: "2021 — 2025",
@@ -31,7 +51,9 @@ export const experiences: Experience[] = [
     tags: ["Leadership", "Cloud", "AI/ML", "Strategy"],
   },
   {
+    id: "crayon-vp",
     company: "Crayon",
+    url: "https://www.crayon.com/",
     role: "VP Data & AI",
     location: "Vienna, Austria & Oslo, Norway",
     period: "2019 — 2021",
@@ -45,7 +67,9 @@ export const experiences: Experience[] = [
     tags: ["AI/ML", "Data Science", "Data Engineering", "Team Building"],
   },
   {
+    id: "aim",
     company: "AIM Software (acquired by SimCorp)",
+    url: "https://www.simcorp.com/",
     role: "Global Head of Engineering",
     location: "Vienna, Austria",
     period: "2018 — 2019",
@@ -59,7 +83,9 @@ export const experiences: Experience[] = [
     tags: ["Engineering Leadership", "Financial Services", "Data Management"],
   },
   {
+    id: "braintribe",
     company: "Braintribe Technologies",
+    url: "https://braintribe.com/",
     role: "Head of Cloud",
     location: "Vienna, Austria",
     period: "2017 — 2018",
@@ -73,7 +99,9 @@ export const experiences: Experience[] = [
     tags: ["Cloud", "Platform", "Hybrid Cloud", "Strategy"],
   },
   {
+    id: "ibm",
     company: "IBM",
+    url: "https://www.ibm.com/",
     role: "Senior Technical Staff Member (STSM)",
     location: "Vienna & New York",
     period: "2011 — 2017",
@@ -87,7 +115,9 @@ export const experiences: Experience[] = [
     tags: ["Deep Learning", "Cloud", "DevOps", "Patents", "Open Source"],
   },
   {
+    id: "csiro",
     company: "CSIRO / Data61",
+    url: "https://www.csiro.au/",
     role: "Research Scientist",
     location: "Sydney, Australia",
     period: "2009 — 2011",
@@ -101,7 +131,9 @@ export const experiences: Experience[] = [
     tags: ["Semantic Web", "SOA", "Research", "Linked Data"],
   },
   {
+    id: "tuwien",
     company: "TU Wien",
+    url: "https://dsg.tuwien.ac.at/",
     role: "PhD Researcher",
     location: "Vienna, Austria",
     period: "2005 — 2009",

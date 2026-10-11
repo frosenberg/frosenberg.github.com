@@ -1,30 +1,24 @@
 import { cn } from "@/lib/cn";
 
 interface SectionHeadingProps {
-  number: string;
   title: string;
   subtitle?: string;
   className?: string;
 }
 
-export function SectionHeading({
-  number,
-  title,
-  subtitle,
-  className,
-}: SectionHeadingProps) {
+export function SectionHeading({ title, subtitle, className }: SectionHeadingProps) {
   return (
-    <div className={cn("mb-12 md:mb-16", className)}>
-      <span className="font-mono text-sm text-primary tracking-wider mb-3 block">
-        {number} //
-      </span>
-      <h2 className="font-display text-3xl md:text-4xl font-bold text-text-heading leading-tight">
+    <div className={cn("mb-10 md:mb-14", className)}>
+      <h2 className="flex items-center gap-3 text-[2.25rem] leading-tight font-semibold tracking-tight">
+        <span
+          aria-hidden="true"
+          className="size-3.5 shrink-0 rounded-full border-[1.75px] border-ink"
+        />
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-3 text-lg text-text-muted max-w-2xl">{subtitle}</p>
+        <p className="mt-2 pl-[1.625rem] text-ink-muted max-w-[60ch]">{subtitle}</p>
       )}
-      <div className="mt-4 w-16 h-0.5 bg-primary" />
     </div>
   );
 }

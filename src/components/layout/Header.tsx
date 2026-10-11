@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { NAV_ITEMS } from "@/lib/constants";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { cn } from "@/lib/cn";
+import { ThemeToggle } from "./ThemeToggle";
 
 const sectionIds = NAV_ITEMS.map((item) => item.href.replace("/#", ""));
 
@@ -14,79 +15,80 @@ export function Header() {
   const activeSection = useActiveSection(sectionIds);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const linkClass = (href: string) =>
+    cn(
+      "font-cond font-medium transition-colors",
+      activeSection === href.replace("/#", "")
+        ? "text-signal underline underline-offset-[6px] decoration-2"
+        : "text-ink-muted hover:text-ink"
+    );
+
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-bg/90 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 bg-sheet/95 backdrop-blur-sm border-b transition-colors",
+        scrolled || mobileOpen ? "border-line" : "border-transparent"
       )}
     >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav
+        aria-label="Main"
+        className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between"
+      >
         <a
           href="/"
-          className="font-display font-bold text-xl text-text-heading tracking-tight"
+          className={cn(
+            "font-semibold text-[1.0625rem] transition-opacity",
+            scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+          )}
+          tabIndex={scrolled ? 0 : -1}
         >
-          FR
+          Florian Rosenberg
         </a>
 
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        <div className="flex items-center gap-7">
+          <ul className="hidden md:flex items-center gap-7 text-[1.0625rem]">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className={linkClass(item.href)}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden -mr-2 p-2 text-ink"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </nav>
+
+      {mobileOpen && (
+        <ul id="mobile-menu" className="md:hidden px-4 pb-4 space-y-1 text-lg">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
               <a
                 href={item.href}
-                className={cn(
-                  "text-sm transition-colors duration-200",
-                  activeSection === item.href.replace("/#", "")
-                    ? "text-primary-light"
-                    : "text-text-muted hover:text-text-heading"
-                )}
+                onClick={() => setMobileOpen(false)}
+                className={cn("block py-1.5", linkClass(item.href))}
               >
                 {item.label}
               </a>
             </li>
           ))}
         </ul>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-text-muted hover:text-text-heading transition-colors"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-bg/95 backdrop-blur-md border-b border-border">
-          <ul className="px-6 py-4 space-y-3">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={cn(
-                    "block text-sm py-1 transition-colors",
-                    activeSection === item.href.replace("/#", "")
-                      ? "text-primary-light"
-                      : "text-text-muted hover:text-text-heading"
-                  )}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
       )}
     </header>
   );

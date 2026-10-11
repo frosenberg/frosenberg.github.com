@@ -1,16 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { FileText, Award } from "lucide-react";
+import { Entry } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
 import { ExpandableList } from "@/components/ui/ExpandableList";
-import { Badge } from "@/components/ui/Badge";
+import { People } from "@/components/ui/People";
 import { cn } from "@/lib/cn";
-import type { Publication } from "@/types";
-
-// We'll import publications lazily to keep the component focused
 import { publications } from "@/data/publications";
+import type { Publication } from "@/types";
 
 type PubType = Publication["type"];
 
@@ -21,145 +18,124 @@ const tabs: { label: string; type: PubType }[] = [
   { label: "Thesis", type: "thesis" },
 ];
 
-function highlightAuthor(authors: string) {
-  return authors.replace(
-    /F\.\s*Rosenberg/g,
-    '<strong class="text-text-heading">F. Rosenberg</strong>'
-  );
-}
+const linkClass = "underline underline-offset-4 decoration-1 decoration-line hover:decoration-ink";
 
 function PublicationItem({ pub }: { pub: Publication }) {
   return (
-    <div className="border-b border-border py-4 last:border-0">
-      <div className="flex items-start gap-3">
-        <div className="flex-1 min-w-0">
-          <h4 className="font-medium text-text-heading leading-snug text-sm">
-            {pub.pdfPath ? (
-              <a
-                href={pub.pdfPath}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary-light transition-colors"
-              >
-                {pub.title}
-              </a>
-            ) : (
-              pub.title
-            )}
-          </h4>
-          <p
-            className="text-xs text-text-muted mt-1"
-            dangerouslySetInnerHTML={{
-              __html: highlightAuthor(pub.authors),
-            }}
-          />
-          <div className="flex items-center gap-2 mt-1.5">
-            <span className="text-xs text-text-dim">{pub.venue}</span>
-            <span className="font-mono text-xs text-text-dim">
-              ({pub.year})
-            </span>
-            {pub.award && (
-              <Badge variant="accent">
-                <span className="flex items-center gap-1">
-                  <Award size={10} />
-                  {pub.award}
-                </span>
-              </Badge>
-            )}
-          </div>
-        </div>
-        {pub.pdfPath && (
-          <a
-            href={pub.pdfPath}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-text-dim hover:text-primary-light transition-colors shrink-0 mt-0.5"
-            aria-label={`Download PDF: ${pub.title}`}
-          >
-            <FileText size={16} />
+    <Entry margin={pub.year}>
+      <h3 className="font-semibold leading-snug">
+        {pub.pdfPath ? (
+          <a href={pub.pdfPath} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            {pub.title}
+            <span className="sr-only"> (PDF)</span>
           </a>
+        ) : (
+          pub.title
         )}
-      </div>
-    </div>
+      </h3>
+      <p className="mt-1 text-base text-ink-muted">
+        <People names={pub.authors.split(",")} />
+      </p>
+      <p className="mt-1 text-base text-ink-muted">
+        <em>{pub.venue}</em>
+        {pub.awards?.map((award) => (
+          <span key={award.label}>
+            {", "}
+            <span className="font-cond font-semibold text-signal">
+              {award.url ? (
+                <a
+                  href={award.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 decoration-1 hover:decoration-2"
+                >
+                  {award.label}
+                </a>
+              ) : (
+                award.label
+              )}
+            </span>
+          </span>
+        ))}
+      </p>
+    </Entry>
   );
 }
 
 export function Publications() {
   const [activeTab, setActiveTab] = useState<PubType>("journal");
   const filtered = publications.filter((p) => p.type === activeTab);
-  const counts = tabs.map((t) => ({
-    ...t,
-    count: publications.filter((p) => p.type === t.type).length,
-  }));
+  const counts = tabs
+    .map((t) => ({ ...t, count: publications.filter((p) => p.type === t.type).length }))
+    .filter((t) => t.count > 0);
 
   return (
-    <section id="publications" className="py-24 md:py-32 section-alt">
-      <div className="max-w-6xl mx-auto px-6">
-        <AnimateOnScroll>
-          <SectionHeading
-            number="06"
-            title="Publications"
-            subtitle={`${publications.length} peer-reviewed publications across top venues`}
-          />
-        </AnimateOnScroll>
+    <section id="publications" className="border-t border-line">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+        <SectionHeading
+          title="Publications"
+          subtitle={`${publications.length} publications on service-oriented systems, cloud and machine learning.`}
+        />
 
-        <AnimateOnScroll delay={0.1}>
-          <div className="flex items-center gap-1 mb-6 overflow-x-auto pb-1">
-            {counts.map((tab) => (
+        <div
+          role="tablist"
+          aria-label="Publication type"
+          className="flex gap-6 border-b border-line mb-2 overflow-x-auto"
+        >
+          {counts.map((tab) => {
+            const selected = activeTab === tab.type;
+            return (
               <button
                 key={tab.type}
+                type="button"
+                role="tab"
+                id={`tab-${tab.type}`}
+                aria-selected={selected}
+                aria-controls="publication-list"
                 onClick={() => setActiveTab(tab.type)}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer",
-                  activeTab === tab.type
-                    ? "bg-primary/15 text-primary-light"
-                    : "text-text-muted hover:text-text-heading hover:bg-surface"
+                  "-mb-px py-2 border-b-2 whitespace-nowrap cursor-pointer font-medium",
+                  selected
+                    ? "border-signal text-ink"
+                    : "border-transparent text-ink-muted hover:text-ink"
                 )}
               >
                 {tab.label}{" "}
-                <span className="text-xs opacity-60">({tab.count})</span>
+                <span className="figures text-ink-muted">{tab.count}</span>
               </button>
+            );
+          })}
+        </div>
+
+        <div id="publication-list" role="tabpanel" aria-labelledby={`tab-${activeTab}`}>
+          <ExpandableList key={activeTab} initialCount={5} totalLabel="publications">
+            {filtered.map((pub, i) => (
+              <PublicationItem key={`${pub.title}-${i}`} pub={pub} />
             ))}
-          </div>
-        </AnimateOnScroll>
+          </ExpandableList>
+        </div>
 
-        <AnimateOnScroll delay={0.15}>
-          <div className="bg-surface border border-border rounded-lg px-6">
-            <ExpandableList
-              key={activeTab}
-              initialCount={5}
-              totalLabel="publications"
-            >
-              {filtered.map((pub, i) => (
-                <PublicationItem key={`${pub.title}-${i}`} pub={pub} />
-              ))}
-            </ExpandableList>
-          </div>
-        </AnimateOnScroll>
-
-        <AnimateOnScroll delay={0.2}>
-          <p className="mt-6 text-sm text-text-dim">
-            Full listings also available on{" "}
-            <a
-              href="http://www.informatik.uni-trier.de/~ley/pers/hd/r/Rosenberg:Florian.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary-light hover:text-primary underline underline-offset-2 transition-colors"
-            >
-              DBLP
-            </a>{" "}
-            and{" "}
-            <a
-              href="http://scholar.google.at/citations?user=KK2le2UAAAAJ&hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary-light hover:text-primary underline underline-offset-2 transition-colors"
-            >
-              Google Scholar
-            </a>
-            .
-          </p>
-        </AnimateOnScroll>
+        <p className="mt-10 text-base text-ink-muted">
+          Full listings are on{" "}
+          <a
+            href="http://www.informatik.uni-trier.de/~ley/pers/hd/r/Rosenberg:Florian.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-signal underline underline-offset-4"
+          >
+            DBLP
+          </a>{" "}
+          and{" "}
+          <a
+            href="http://scholar.google.at/citations?user=KK2le2UAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-signal underline underline-offset-4"
+          >
+            Google Scholar
+          </a>
+          .
+        </p>
       </div>
     </section>
   );

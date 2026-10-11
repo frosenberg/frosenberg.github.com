@@ -1,5 +1,7 @@
 export interface Experience {
+  id: string;
   company: string;
+  url: string;
   role: string;
   location: string;
   period: string;
@@ -11,11 +13,17 @@ export interface Experience {
 export interface Patent {
   title: string;
   number: string;
+  url: string;
   abstract: string;
   filed: string;
   dateOfPatent: string;
   assignee: string;
   inventors: string[];
+}
+
+export interface Award {
+  label: string;
+  url?: string;
 }
 
 export interface Publication {
@@ -24,7 +32,7 @@ export interface Publication {
   title: string;
   venue: string;
   pdfPath?: string;
-  award?: string;
+  awards?: Award[];
   type: "journal" | "conference" | "book-chapter" | "thesis";
 }
 

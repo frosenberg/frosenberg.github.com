@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/cn";
 
 interface ExpandableListProps {
@@ -35,29 +34,23 @@ export function ExpandableList({
             initial={i >= initialCount ? { opacity: 0, height: 0 } : false}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.3, ease: [0.65, 0, 0.35, 1] }}
+            className="overflow-hidden"
           >
             {child}
           </motion.div>
         ))}
       </AnimatePresence>
       <button
+        type="button"
         onClick={() => setExpanded(!expanded)}
+        aria-expanded={expanded}
         className={cn(
-          "mt-4 flex items-center gap-2 text-sm font-medium text-primary-light",
-          "hover:text-primary transition-colors cursor-pointer"
+          "mt-4 sm:ml-[10.5rem] text-base font-medium text-signal underline underline-offset-4 decoration-1",
+          "hover:decoration-2 cursor-pointer"
         )}
       >
-        <ChevronDown
-          size={16}
-          className={cn(
-            "transition-transform duration-300",
-            expanded && "rotate-180"
-          )}
-        />
-        {expanded
-          ? "Show less"
-          : `Show all ${children.length} ${totalLabel}`}
+        {expanded ? "Show fewer" : `Show all ${children.length} ${totalLabel}`}
       </button>
     </div>
   );

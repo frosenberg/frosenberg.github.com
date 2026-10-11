@@ -151,7 +151,13 @@ export const publications: Publication[] = [
     title: "Testing Idempotence for Infrastructure as Code",
     venue: "Middleware'13",
     pdfPath: "/pdfs/middleware2013.pdf",
-    award: "Best Student Paper",
+    awards: [
+      { label: "Best Student Paper" },
+      {
+        label: "Test of Time Award 2023",
+        url: "https://middleware-conf.github.io/awards/test-of-time/",
+      },
+    ],
     type: "conference",
   },
   {
