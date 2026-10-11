@@ -142,7 +142,7 @@ export const experiences: Experience[] = [
     highlights: [
       "PhD: QoS-Aware Composition of Adaptive Service-Oriented Systems",
       "50+ publications in top venues (IEEE, ACM, Springer)",
-      "Best Student Paper at ACM/IFIP/USENIX Middleware 2013",
+      "Best Student Paper at ACM/IFIP/USENIX Middleware 2013, and the Middleware Test of Time Award 2023 for the same paper",
     ],
     tags: ["Distributed Systems", "QoS", "Microservices", "PhD"],
   },

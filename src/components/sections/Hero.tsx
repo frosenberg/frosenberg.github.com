@@ -14,7 +14,16 @@ export function Hero() {
             Florian Rosenberg
           </h1>
           <p className="mt-6 max-w-[42ch] text-[1.3125rem] md:text-[1.5rem] leading-snug text-ink">
-            CTO at Truvio. Technology executive with deep technical roots in
+            CTO at{" "}
+            <a
+              href="https://truvio.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-signal underline underline-offset-4 decoration-1 hover:decoration-2"
+            >
+              Truvio
+            </a>
+            . Technology executive with deep technical roots in
             distributed systems, cloud and AI, backed by {papers} publications
             and {patents.length} US patents.
           </p>
